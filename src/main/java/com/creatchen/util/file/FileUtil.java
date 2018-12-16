@@ -36,16 +36,20 @@ public class FileUtil {
 
     public static String getFileCharset(String filepath) {
         File f = new File(filepath);
-        int EF = -17;
-        int BB = -69;
-        int BF = -65;
+        return getFileCharset(f);
+    }
+
+    public static String getFileCharset(File file) {
+        int ef = -17;
+        int bb = -69;
+        int bf = -65;
         String charset = Chartset.GBK;
         try {
-            InputStream ios = new FileInputStream(f);
+            InputStream ios = new FileInputStream(file);
             byte[] b = new byte[3];
             ios.read(b);
             ios.close();
-            if (b[0] == EF && b[1] == BB && b[2] == BF) {
+            if (b[0] == ef && b[1] == bb && b[2] == bf) {
                 charset = Chartset.UTF_8;
             }
         } catch (Exception e) {
@@ -53,18 +57,4 @@ public class FileUtil {
         }
         return charset;
     }
-
-    public static void main(String[] args) {
-        String filepath1 = "F:\\test\\UTF-8_BOM.txt";
-        String filepath2 = "F:\\test\\UTF-8.txt";
-        String filepath3 = "F:\\test\\GBK.txt";
-
-
-        System.out.println(getFileCharset(filepath1));
-        System.out.println(getFileCharset(filepath2));
-        System.out.println(getFileCharset(filepath3));
-
-    }
-
-
 }
