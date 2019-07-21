@@ -2,7 +2,7 @@ package com.creatchen.util;
 
 /**
  * Hello world!
- *
+ * @author chen
  */
 public class App 
 {

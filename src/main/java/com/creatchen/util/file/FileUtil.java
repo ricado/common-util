@@ -4,6 +4,8 @@ import com.creatchen.util.constants.Chartset;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.List;
 
 /**
  * @author creatchen
@@ -47,9 +49,12 @@ public class FileUtil {
         try {
             InputStream ios = new FileInputStream(file);
             byte[] b = new byte[3];
+            int tmpEf = b[0];
+            int tmpBb = b[1];
+            int tmpBf = b[2];
             ios.read(b);
             ios.close();
-            if (b[0] == ef && b[1] == bb && b[2] == bf) {
+            if (tmpEf == ef && tmpBb == bb && tmpBf == bf) {
                 charset = Chartset.UTF_8;
             }
         } catch (Exception e) {

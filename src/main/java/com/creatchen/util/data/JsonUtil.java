@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2018/12/15
  */
 @Slf4j
-public class JSONUtil {
+public class JsonUtil {
 
     /**
      * 获取jsonObject中键值为key的JSONObject对象，类型不对则返回null

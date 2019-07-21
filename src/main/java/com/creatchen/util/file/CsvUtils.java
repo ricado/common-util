@@ -45,7 +45,7 @@ public class CsvUtils {
     private static List<Map> readCsvReader(CsvReader csvReader, List<String> headers) throws IOException {
         List<Map> dataList = new ArrayList<>();
         while (csvReader.readRecord()) {
-            Map<String, Object> data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>(headers.size() * 2);
             for (String header : headers) {
                 data.put(header, csvReader.get(header));
             }

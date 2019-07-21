@@ -6,11 +6,29 @@ package com.creatchen.util.constants;
  * @date 2018/12/15
  */
 public enum DateFormat {
+    /**
+     * yyyy-MM-dd HH:mm:ss
+     */
     YYYY_MM_DD_HH_MM_SS("yyyy-MM-dd HH:mm:ss"),
+    /**
+     * yyyy-MM-dd HH:mm
+     */
     YYYY_MM_DD_HH_MM("yyyy-MM-dd HH:mm"),
+    /**
+     * yyyy-MM-dd
+     */
     YYYY_MM_DD("yyyy-MM-dd"),
+    /**
+     * yyyy
+     */
     YYYY("yyyy"),
+    /**
+     * MM
+     */
     MM("MM"),
+    /**
+     * dd
+     */
     DD("dd"),
     ;
 
